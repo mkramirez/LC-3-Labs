@@ -1,4 +1,3 @@
-
 .ORIG x3120
 X .FILL 10
 Y .FILL 20
@@ -30,18 +29,18 @@ XP
 STR R4, R2, #4
 
 NOT R5, R4
-ADD R6, R4, R3
+ADD R6, R3, R5
+BRz STOP
+BRp GREATER
+BRn LESS
 
-BRz Equals
-BRn GreaterR4
-BRp GreaterR3
+GREATER ADD R7, R7, #1
+BRp STOP
 
-Equals BRnzp End
-
-GreaterR4 ADD R7, R7, #-1
-BRnzp End
-GreaterR3 ADD R7, R7, #1
-BRnzp End
+LESS ADD R7, R7, #-1
+STOP AND R0, R0, #0
+LD R0, BASE
+STR R7, R0, #5
 
 HALT
 
