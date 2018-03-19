@@ -1,3 +1,18 @@
+;Class:CSE 313 Machine organization Lab
+;Section: 01
+;Instructor: Taline Georgiou
+;Term: Winter 2018
+;Name: Matthew Ramirez, Ivette Campana
+;Lab #7: Compute Day of the week
+;Description: The program simply takes the 3 sections of a date, being the day,
+;the month, and the year. We compute M which gives us the Month by calculating
+;if its greater or equal to 2, we add 10. Otherwise we subtract 2, as the month
+;is recognized different, March = 1, April 2, etc etc. We then find D which is
+;simply the last 2 digits of the year which we find using a mod 100. Then for C
+;we use a division of the year, to find the first 2 digits of the year. After
+;with the use of the Zellar formula, plug in all of the numbers to find the mod
+;7 then correlate that number to the correct day and print it out.
+;-------------------------------------------------------------------------------
 .ORIG x3000
 
 	LDI R3, MONTH	; m
